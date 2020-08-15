@@ -1,0 +1,8 @@
+bool StringMatch(string pat, string txt) {
+   
+    if(txt.find(pat)==string::npos) return false;  //if pat is not found return NO
+    return true;                                 //else return YES
+    
+}
+//here we are just using find iterator to search for string
+//Contributed by RISHABH
