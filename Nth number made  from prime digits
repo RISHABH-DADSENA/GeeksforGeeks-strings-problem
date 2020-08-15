@@ -1,0 +1,31 @@
+int primeDigits(int n) {
+    //code here
+    queue <string> q;
+    if(n<=4){
+        if(n==1) return 2;
+        if(n==2) return 3;
+        if(n==3)  return 5;
+        if(n==4) return 7;
+    }
+    else{
+        q.push("2");
+        q.push("3");
+        q.push("5");
+        q.push("7");
+        n=n-4;
+        while(q.empty()==false && n>=4){
+            string s=q.front();
+            q.pop();
+            q.push(s+"2");
+            q.push(s+"3");
+            q.push(s+"5");
+            q.push(s+"7");
+            n=n-4;
+        }
+        string s=q.front();
+        if(n>=1) q.push(s+"2");
+        if(n>=2) q.push(s+"3");
+        if(n>=3) q.push(s+"5");
+        return stoi(q.back());
+    }
+}
